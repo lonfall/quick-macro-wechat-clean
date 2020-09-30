@@ -4,8 +4,11 @@ import com.lh.img.ColorBlock;
 import com.lh.img.Coordinate;
 import com.lh.img.finder.ImageFinder;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -35,6 +38,12 @@ public class ScreenImageFinder implements ImageFinder {
 
     public void resetScreen() {
         screen = robot.createScreenCapture(new Rectangle(0, 0, dimension.width, dimension.height));
+        try {
+            // 保存截图
+            ImageIO.write(screen, "jpeg", new File("D:/tmp/quick-macro-wechat-clean-last-screen.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Coordinate> match(BufferedImage image, double percent) {
