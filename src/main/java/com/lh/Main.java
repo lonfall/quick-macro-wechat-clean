@@ -16,6 +16,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * 自动清理微信应用缓存
+ * 注意：使用前请替换img资源文件，为对应系统的截图，否则无法找到定位点
+ *
  * @auther: loneyfall
  * @date: 2020/9/27
  * @description:
