@@ -59,6 +59,20 @@ public class TaskUtil {
     }
 
     /**
+     * 定时三分钟执行任务
+     *
+     * @param callback 回调
+     */
+    public static void TaskThreeMinute(TaskCallback callback) {
+        getTimer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                callback.call();
+            }
+        }, 3 * 60 * 1000, 3 * 60 * 1000);
+    }
+
+    /**
      * 关闭所有任务，并重置
      */
     public static void stop() {

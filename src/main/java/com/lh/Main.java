@@ -35,14 +35,19 @@ public class Main {
         calendar.set(Calendar.MINUTE, 0);       // 控制分
         calendar.set(Calendar.SECOND, 0);       // 控制秒
 
-        Date time = calendar.getTime();         // 得出执行任务的时间,此处为今天的12：00：00
+//        Date time = calendar.getTime();         // 得出执行任务的时间,此处为今天的12：00：00
 
         initImageQueue();
 
-        TaskUtil.TaskEveryDay(() -> {
+//        TaskUtil.TaskEveryDay(() -> {
+//            logger.info("开始清空任务");
+//            findImgAndClickByQueue(0, 0);
+//        }, time);
+
+        TaskUtil.TaskThreeMinute(() -> {
             logger.info("开始清空任务");
             findImgAndClickByQueue(0, 0);
-        }, time);
+        });
     }
 
     /**
