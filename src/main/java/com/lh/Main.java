@@ -12,7 +12,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,7 +43,12 @@ public class Main {
 //            findImgAndClickByQueue(0, 0);
 //        }, time);
 
-        TaskUtil.TaskThreeMinute(() -> {
+//        TaskUtil.TaskThreeMinute(() -> {
+//            logger.info("开始清空任务");
+//            findImgAndClickByQueue(0, 0);
+//        });
+
+        TaskUtil.TaskEveryWeek(() -> {
             logger.info("开始清空任务");
             findImgAndClickByQueue(0, 0);
         });

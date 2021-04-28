@@ -69,7 +69,21 @@ public class TaskUtil {
             public void run() {
                 callback.call();
             }
-        }, 3 * 60 * 1000, 3 * 60 * 1000);
+        }, 10 * 1000, 3 * 60 * 1000);
+    }
+
+    /**
+     * 每周定时执行任务
+     *
+     * @param callback
+     */
+    public static void TaskEveryWeek(TaskCallback callback) {
+        getTimer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                callback.call();
+            }
+        }, 3 * 60 * 1000, 1000 * 60 * 60 * 24 * 7);
     }
 
     /**
